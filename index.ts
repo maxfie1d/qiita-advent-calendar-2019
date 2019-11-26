@@ -1,8 +1,8 @@
 import * as R from "ramda";
-import { maybe, Maybe, Nothing, Result, result } from "folktale";
+import { maybe, Maybe, Result, result } from "folktale";
 
 function trueOrFalse() {
-  return true;
+  return false || true;
 }
 
 /**
