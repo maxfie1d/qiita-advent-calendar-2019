@@ -1,4 +1,4 @@
-import {} from "ramda";
+import * as R from "ramda";
 import { maybe, Maybe, Nothing, Result, result } from "folktale";
 
 function trueOrFalse() {
@@ -30,3 +30,13 @@ myResult.matchWith({
     console.log(value); // => 失敗だよ
   }
 });
+
+const array = [1, 2, 3];
+// Mutable
+array.push(4);
+
+const array5 = R.append(5, array);
+const array0 = R.prepend(0, array);
+
+console.log(array5); // => [1, 2, 3, 4, 5]
+console.log(array0); // => [0, 1, 2, 3, 4]
