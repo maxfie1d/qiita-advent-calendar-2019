@@ -74,3 +74,30 @@ console.log(add3(1, 2, 3)); // => 6
 console.log(curriedAdd(1)(2, 3)); // => 6
 console.log(curriedAdd(1, 2)(3)); // => 6
 console.log(curriedAdd(1)(2)(3)); // => 6
+
+/**
+ *  ____  _            _ _
+|  _ \(_)_ __   ___| (_)_ __   ___
+| |_) | | '_ \ / _ \ | | '_ \ / _ \
+|  __/| | |_) |  __/ | | | | |  __/
+|_|   |_| .__/ \___|_|_|_| |_|\___|
+        |_|
+  ____                                _ _   _
+ / ___|___  _ __ ___  _ __   ___  ___(_) |_(_) ___  _ __
+| |   / _ \| '_ ` _ \| '_ \ / _ \/ __| | __| |/ _ \| '_ \
+| |__| (_) | | | | | | |_) | (_) \__ \ | |_| | (_) | | | |
+ \____\___/|_| |_| |_| .__/ \___/|___/_|\__|_|\___/|_| |_|
+                     |_|
+ */
+
+type Fn = (xs: number[]) => number[];
+const f: Fn = R.filter(x => x % 2 === 0);
+const g: Fn = R.map(x => x * 2);
+const h: Fn = R.filter(x => x > 5);
+const numbers = R.range(1, 10);
+
+const r1 = R.pipe(f, g, h)(numbers);
+const r2 = R.compose(f, g, h)(numbers);
+
+console.log(r1); // => [8, 12, 16]
+console.log(r2); // => [12, 14, 16, 18]
