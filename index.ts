@@ -52,6 +52,7 @@ const array = [1, 2, 3];
 // Mutable
 array.push(4);
 
+// Immutable
 const array5 = R.append(5, array);
 const array0 = R.prepend(0, array);
 
@@ -68,12 +69,12 @@ console.log(array0); // => [0, 1, 2, 3, 4]
  */
 
 const add3 = (a: number, b: number, c: number) => a + b + c;
-const curriedAdd = R.curry(add3);
+const curriedAdd3 = R.curry(add3);
 
 console.log(add3(1, 2, 3)); // => 6
-console.log(curriedAdd(1)(2, 3)); // => 6
-console.log(curriedAdd(1, 2)(3)); // => 6
-console.log(curriedAdd(1)(2)(3)); // => 6
+console.log(curriedAdd3(1)(2, 3)); // => 6
+console.log(curriedAdd3(1, 2)(3)); // => 6
+console.log(curriedAdd3(1)(2)(3)); // => 6
 
 /**
  *  ____  _            _ _
