@@ -52,10 +52,13 @@ const array = [1, 2, 3];
 // Mutable
 array.push(4);
 
+console.log(array); // => [1, 2, 3, 4]
+
 // Immutable
 const array5 = R.append(5, array);
 const array0 = R.prepend(0, array);
 
+console.log(array); // => [1, 2, 3, 4]
 console.log(array5); // => [1, 2, 3, 4, 5]
 console.log(array0); // => [0, 1, 2, 3, 4]
 
